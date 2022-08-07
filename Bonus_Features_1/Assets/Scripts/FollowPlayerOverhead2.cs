@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayerOverhead : MonoBehaviour
+public class FollowPlayerOverhead2 : MonoBehaviour
 {
     public GameObject player;
     private Vector3 offset = new Vector3(0, 3, -4);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     private float speed = 20.0f;
     private float turnSpeed = 45.0f;
@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // this is where we get the player's input
-        horizontalInput = Input.GetAxis("Horizontal2");
-        forwardInput = Input.GetAxis("Vertical2");
+        horizontalInput = Input.GetAxis("Horizontal1");
+        forwardInput = Input.GetAxis("Vertical1");
         // Move the vehicle forward based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); 
         // Rotate the vehicle based on horizontal input
