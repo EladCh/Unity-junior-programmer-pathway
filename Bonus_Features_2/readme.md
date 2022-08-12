@@ -7,5 +7,4 @@ This tutorial outlines four potential bonus features for the Feed the Animals Pr
 * Hard: Game user interface
 * Expert: Animal hunger bar
 
-to see the implementation of each difficulty level please see the commits of #6
-
+to see the implementation of each difficulty level please see the commits of https://github.com/EladCh/Unity-Create-with-Code/pull/6
