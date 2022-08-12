@@ -7,6 +7,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     private float topBound = 30;
     private float lowerBound = -10;
     private float sideBound = 30;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -24,19 +25,19 @@ public class DestroyOutOfBounds : MonoBehaviour
         else if (transform.position.z < lowerBound)
         {
             // if an animal passed the player - game ends
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         else if (transform.position.x > sideBound)
         {
             // destroy farm animals that pass the right boundary
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         else if (transform.position.x < -sideBound)
         {
             // destroy farm animals that pass the right boundary
-            Debug.Log("Game Over!");
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
     }
