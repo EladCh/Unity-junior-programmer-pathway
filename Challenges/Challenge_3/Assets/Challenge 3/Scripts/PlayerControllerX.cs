@@ -21,21 +21,31 @@ public class PlayerControllerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity *= gravityModifier;
+        playerRb = GetComponent<Rigidbody>();
         playerAudio = GetComponent<AudioSource>();
+        Physics.gravity *= gravityModifier;
 
         // Apply a small upward force at the start of the game
-        playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        playerRb.AddForce(Vector3.up * floatForce, ForceMode.Impulse);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        // limit baloon on top
+        if (transform.position.y < 11.5f)
         {
-            playerRb.AddForce(Vector3.up * floatForce);
+            // While space is pressed and player is low enough, float up
+            if (Input.GetKey(KeyCode.Space) && !gameOver)
+            {
+                 playerRb.AddForce(Vector3.up * floatForce, ForceMode.Impulse);
+            }
+        }
+        if (transform.position.y > 17f)
+        {
+            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0f, 17f),transform.position.z);
+            playerRb.AddForce(Vector3.down * floatForce, ForceMode.Impulse);
         }
     }
 
@@ -50,7 +60,6 @@ public class PlayerControllerX : MonoBehaviour
             Debug.Log("Game Over!");
             Destroy(other.gameObject);
         } 
-
         // if player collides with money, fireworks
         else if (other.gameObject.CompareTag("Money"))
         {
@@ -58,6 +67,11 @@ public class PlayerControllerX : MonoBehaviour
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
 
+        }
+        // bounce when hitting the ground
+        else if (other.gameObject.CompareTag("Ground") && !gameOver)
+        {
+            playerRb.AddForce(Vector3.up * 4 *floatForce, ForceMode.Impulse);
         }
 
     }
