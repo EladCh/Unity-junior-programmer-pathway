@@ -42,15 +42,16 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         // handle entering dash trigger
-        else if (Input.GetKeyDown(KeyCode.LeftAlt) && isOnGround && !gameOver)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isOnGround && !gameOver)
         {
             isOnDash = true;
-            // increase spead of animation
+            playerAmin.SetFloat("Speed_Multiplier", 2.0f);
         }
         // handle exiting dash trigger
-        else if (Input.GetKeyUp(KeyCode.LeftAlt) && isOnGround && !gameOver)
+        else if (Input.GetKeyUp(KeyCode.LeftShift) && isOnGround && !gameOver)
         {
             isOnDash = false;
+            playerAmin.SetFloat("Speed_Multiplier", 1.0f);
         }
 
     }
