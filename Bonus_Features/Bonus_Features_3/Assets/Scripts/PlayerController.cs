@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool gameOver = false;
     public bool onDoubleJump = false;
+    public bool isOnDash = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // handle jump trigger
         if (Input.GetKeyDown(KeyCode.Space) && (isOnGround || (!isOnGround && !onDoubleJump)) && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -37,7 +40,19 @@ public class PlayerController : MonoBehaviour
             playerAmin.SetTrigger("Jump_trig");
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
-        }   
+        }
+        // handle entering dash trigger
+        else if (Input.GetKeyDown(KeyCode.LeftAlt) && isOnGround && !gameOver)
+        {
+            isOnDash = true;
+            // increase spead of animation
+        }
+        // handle exiting dash trigger
+        else if (Input.GetKeyUp(KeyCode.LeftAlt) && isOnGround && !gameOver)
+        {
+            isOnDash = false;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
