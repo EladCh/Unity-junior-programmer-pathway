@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Game Over!");
+            Debug.Log("<color=red>Game Over!</color>");
             gameOver = true;
             playerAmin.SetBool("Death_b", true);
             playerAmin.SetInteger("DeathType_int", 1);
