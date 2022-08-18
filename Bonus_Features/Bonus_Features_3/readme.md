@@ -7,3 +7,6 @@ This tutorial outlines four potential bonus features for the Run and Jump Protot
 * Medium: Double jump
 * Hard: Dash ability and score
 * Expert: Game start animation
+
+to see the implementation of each difficulty level please see the commits of https://github.com/EladCh/Unity-Create-with-Code/pull/12
+
