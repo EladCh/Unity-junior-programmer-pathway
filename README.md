@@ -1,4 +1,4 @@
-# Unity-Create-with-Code
+# Unity junior programmer pathway
 
 This repository contains my implemetation of the of the Unity junior programmer pathway
 
