@@ -12,6 +12,7 @@ public class EnemyX : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        speed += GameObject.Find("Spawn Manager").GetComponent<SpawnManagerX>().enemyWaveSpeed;
         playerGoal = GameObject.Find("Player Goal");
     }
 

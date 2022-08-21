@@ -16,7 +16,7 @@ public class PlayerControllerX : MonoBehaviour
     private float powerupStrength = 25; // how hard to hit enemy with powerup
 
     public ParticleSystem smokeParticle;
-    public float dashSpeedFactor = 5f;
+    public float dashSpeedFactor = 7f;
 
     void Start()
     {

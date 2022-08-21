@@ -13,6 +13,7 @@ public class SpawnManagerX : MonoBehaviour
 
     public int enemyCount;
     public int waveCount = 1;
+    public int enemyWaveSpeed = 0;
 
 
     public GameObject player; 
@@ -54,6 +55,7 @@ public class SpawnManagerX : MonoBehaviour
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
 
+        enemyWaveSpeed += 50;
         waveCount++;
         ResetPlayerPosition(); // put player back at start
 
