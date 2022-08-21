@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private GameObject focalPoint;
     private float powerUpStrength = 15.0f;
+    private float powerUpTimeSec = 7.0f;
     public float speed = 5.0f;
     public bool hasPowerup = false;
 
@@ -30,9 +31,16 @@ public class PlayerController : MonoBehaviour
         {
             hasPowerup = true;
             Destroy(other.gameObject);
+            StartCoroutine(PowerupCountdownRoutine());
         }
     }
 
+    IEnumerator PowerupCountdownRoutine()
+    {
+        yield return new WaitForSeconds(powerUpTimeSec);
+        hasPowerup = false;
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Enemy") && hasPowerup)
