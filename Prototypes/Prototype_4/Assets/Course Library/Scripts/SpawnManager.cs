@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     private float spwanRange = 9.0f;
     public GameObject enemyPrefab;
+    public GameObject powerupPrefab;
     public int enemyCount;
     public int waveNumber = 1;
 
@@ -13,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         SpawnEnemyWave(waveNumber);
+        SpawnPowerup();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class SpawnManager : MonoBehaviour
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
+            SpawnPowerup();
         }
     }
 
@@ -32,6 +35,11 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
+    }
+
+    void SpawnPowerup()
+    {
+        Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
     }
 
     private Vector3 GenerateSpawnPosition()
