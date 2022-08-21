@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float speed = 500;
     private GameObject focalPoint;
+    private float speed = 500;
 
-    public bool hasPowerup;
     public GameObject powerupIndicator;
+    public bool hasPowerup;
     public int powerUpDuration = 5;
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
-    
+
+    public ParticleSystem smokeParticle;
+    public float dashSpeedFactor = 5f;
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -27,8 +30,16 @@ public class PlayerControllerX : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime); 
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 boostVector = focalPoint.transform.forward * dashSpeedFactor * speed * Time.deltaTime;
+            playerRb.AddForce(boostVector, ForceMode.Impulse);
+            smokeParticle.Play();
+        }
+
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+
 
     }
 
