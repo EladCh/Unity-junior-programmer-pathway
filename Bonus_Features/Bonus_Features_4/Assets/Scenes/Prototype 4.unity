@@ -253,6 +253,8 @@ MonoBehaviour:
   speed: 5
   hasPowerup: 0
   PowerupIndicator: {fileID: 1116262963}
+  currentPowerUp: 0
+  rocketPrefab: {fileID: 1018769201747934543, guid: f272a211741f02f45bdb9c3099563b7b, type: 3}
 --- !u!1001 &245963551
 PrefabInstance:
   m_ObjectHideFlags: 0
