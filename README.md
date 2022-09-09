@@ -2,4 +2,20 @@
 
 This repository contains my implemetation of the of the Unity junior programmer pathway
 
+<table>
+<tr><td>
+
 ![image](https://user-images.githubusercontent.com/29371222/183268015-de750773-6639-402f-a094-365b41ab5472.png)
+
+</td><td>
+
+| Project 	| Editor version 	|
+|---	|---	|
+| Prototype 1-2 	| 2021.3.7f1 	|
+| Prototype 3-5 	| 2021.3.8f1 	|
+| Challenges 	| 2021.3.7f1 	|
+| Lab Project 	| 2021.3.8f1 	|
+| Bonus Features 1-2 	| 2021.3.7f1 	|
+| Bonus Features 3-5 	| 2021.3.8f1 	|
+
+</td></tr> </table>
