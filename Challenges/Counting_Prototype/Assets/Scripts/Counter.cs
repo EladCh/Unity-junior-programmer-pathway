@@ -19,7 +19,15 @@ public class Counter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Count ++;
-        CounterText.text = type + " Count : " + Count;
+        if(type == "Good")
+        {
+            SetText(Count);
+        }
+    }
+
+    public void SetText(int count)
+    {
+        CounterText.text = type + " Count : " + count;
     }
 
     public int GetCount() { return Count; }
