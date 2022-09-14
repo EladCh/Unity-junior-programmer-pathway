@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Counter : MonoBehaviour
 {
     public Text CounterText;
+    public string type;
 
     private int Count = 0;
 
@@ -17,7 +18,9 @@ public class Counter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Count += 1;
-        CounterText.text = "Count : " + Count;
+        Count ++;
+        CounterText.text = type + " Count : " + Count;
     }
+
+    public int GetCount() { return Count; }
 }
