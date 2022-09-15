@@ -16,6 +16,7 @@ This repository contains my implemetation of the of the Unity junior programmer 
 | Challenge 1	| 2021.3.7f1 	|
 | Challenges 2-5	| 2021.3.8f1 	|
 | Counting Prototype	| 2021.3.9f1 	|
+| Error Project	| 2021.3.9f1 	|
 | Lab Project 	| 2021.3.8f1 	|
 | Bonus Features 1-2 	| 2021.3.7f1 	|
 | Bonus Features 3-5 	| 2021.3.8f1 	|
