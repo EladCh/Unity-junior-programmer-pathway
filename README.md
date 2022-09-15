@@ -20,5 +20,6 @@ This repository contains my implemetation of the of the Unity junior programmer 
 | Lab Project 	| 2021.3.8f1 	|
 | Bonus Features 1-2 	| 2021.3.7f1 	|
 | Bonus Features 3-5 	| 2021.3.8f1 	|
+| Resource Management Simulation 	| 2020.3.7f1 	|
 
 </td></tr> </table>
