@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    public MainManager Manager;
+    public GameManager Manager;
+
+    private void Awake()
+    {
+        Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     private void OnCollisionEnter(Collision other)
     {

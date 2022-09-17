@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 450625941}
   - component: {fileID: 450625942}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 450625940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d110623a642692246a42fbc2d8d89884, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b6bc0c8bf21ab5408ae80c32339bae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
@@ -503,6 +503,7 @@ MonoBehaviour:
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
   GameOverText: {fileID: 474497238}
+  currentPlayer: 
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee19acfba77e9084fb4ce7ee7ff9e3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 450625942}
+  Manager: {fileID: 0}
 --- !u!1 &1288645155
 GameObject:
   m_ObjectHideFlags: 0
