@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        BestScoreText.text = $"Best Score : {MainManager.Instance.GetCurrentPlayerName()} : {MainManager.Instance.GetBestScore()}";
+        BestScoreText.text = $"Best Score : {MainManager.Instance.GetBestScorePlayerName()} : {MainManager.Instance.GetBestScore()}";
     }
 
     private void Update()
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             if(m_Points > MainManager.Instance.GetBestScore())
             {
                 MainManager.Instance.SetBestScore(m_Points);
-                BestScoreText.text = $"Best Score : {MainManager.Instance.GetCurrentPlayerName()} : {MainManager.Instance.GetBestScore()}";
+                BestScoreText.text = $"Best Score : {MainManager.Instance.GetBestScorePlayerName()} : {MainManager.Instance.GetBestScore()}";
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
