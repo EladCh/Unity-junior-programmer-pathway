@@ -8,7 +8,8 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
 
-    public string currentPlayer;
+    private string currentPlayer;
+    private int bestScore = 0;
 
     private void Awake()
     {
@@ -25,5 +26,20 @@ public class MainManager : MonoBehaviour
     public void SetCurrentPlayerName( string name)
     {
         currentPlayer = name;
+    }
+
+    public string GetCurrentPlayerName()
+    {
+        return currentPlayer;
+    }
+
+    public void SetBestScore(int score)
+    {
+        bestScore = score;
+    }
+
+    public int GetBestScore()
+    {
+        return bestScore;
     }
 }
